@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#PBRecap</title>
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=cabinet-grotesk@800,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="login-overlay">
+        <div class="login-content">
+            <h1 class="giant-text" style="font-size: 5vw; margin-bottom: 20px; text-shadow: 0 0 30px rgba(204,255,0,0.5);">#PBRecap</h1>
+            <p class="label" style="opacity: 0.7;">LÜTFEN SAVAŞÇI ADINI GİR</p>
+            
+            <div class="input-group">
+                <input type="text" id="nicknameInput" placeholder="NICKNAME" autocomplete="off" maxlength="15">
+                <div class="input-border"></div>
+            </div>
+
+            <button class="start-trigger" onclick="submitLogin()" style="margin-top: 40px; opacity: 1; transform: none;">
+                <span>GİRİŞ YAP</span>
+                <i class="ri-login-box-line"></i>
+            </button>
+        </div>
+        <div class="moving-grid" style="opacity: 0.3;"></div>
+    </div>
+
+    <div id="share-card" class="share-card-layout">
+        
+        <div class="sc-bg-image"></div>
+        
+        <div class="sc-character-layer">
+            <img src="https://pb.tamgame.com/images/common/modeselector/v1/cha02_m.png" alt="Character" crossorigin="anonymous">
+        </div>
+
+        <div class="sc-overlay-gradient"></div>
+        <div class="sc-grid-deco"></div>
+
+        <div class="sc-content-wrapper">
+            <div class="sc-header">
+                <div class="sc-brand-badge">#PBRecap</div>
+                <h1 class="giant-text">POINT<br><span class="accent-text">BLANK</span></h1>
+                <p class="sc-subtitle">YILLIK OPERASYON ÖZETİ</p>
+            </div>
+
+            <div class="sc-stats-grid">
+                <div class="sc-stat-box">
+                    <span class="label">TOPLAM KILL</span>
+                    <span class="value accent-text" id="share-kills">0</span>
+                </div>
+                <div class="sc-stat-box">
+                    <span class="label">HS ORANI</span>
+                    <span class="value cyan-text" id="share-hs">0</span>
+                </div>
+                <div class="sc-stat-box">
+                    <span class="label">TOPLAM OYNANAN MAÇ</span>
+                    <span class="value purple-text" id="share-match">0</span>
+                </div>
+                <div class="sc-stat-box">
+                    <span class="label">ZAFERLER</span>
+                    <span class="value purple-text" id="share-win">0</span>
+                </div>
+                <div class="sc-stat-box highlight-box">
+                    <span class="label">YILIN SİLAHI</span>
+                    <span class="value" id="share-weapon" style="font-size: 40px;">SİLAH ADI</span>
+                </div>
+            </div>
+
+            <div class="sc-footer">
+                <div class="sc-player-name">
+                    <span style="opacity:0.6; font-size: 30px; display:block;">SAVAŞÇI</span> 
+                    <span id="share-username-display" class="accent-text">OYUNCU</span>
+                </div>
+                <div class="sc-footer-logos">
+                    <span>#POINTBLANK2025</span>
+                    <div class="sc-barcode"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mesh-bg">
+        <div class="mesh-orb orb-1"></div>
+        <div class="mesh-orb orb-2"></div>
+    </div>
+    <div class="moving-grid"></div>
+    <div class="noise-overlay"></div>
+
+    <div class="sound-pill" onclick="toggleAudio()">
+        <div class="equalizer">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </div>
+        <span id="soundText">SES KAPALI</span>
+    </div>
+    <audio id="bgMusic" loop src="bg-music.mp3"></audio>
+
+    <div class="step-indicator">
+        <span class="current-step">01</span>
+        <div class="line"><div id="progressLine"></div></div>
+        <span class="total-step">13</span>
+    </div>
+
+    <main id="app">
+        <section class="slide active" id="slide-0">
+            <div class="hero-container">
+                <h1 class="giant-text">POINT<br>BLANK</h1>
+                <div class="year-badge" style="margin-top: 20px;">
+                    HOŞ GELDİN, <span id="intro-username-display" style="color: black;">OPERATÖR</span>
+                </div>
+                <div class="start-trigger" onclick="nextSlide()">
+                    <span>RAPORU BAŞLAT</span>
+                    <i class="ri-arrow-right-line"></i>
+                </div>
+            </div>
+        </section>
+        
+        <div id="dynamic-slides"></div>
+    </main>
+
+    <div class="nav-controls">
+        <button onclick="prevSlide()" id="prevBtn" class="nav-arrow disabled"><i class="ri-arrow-left-line"></i></button>
+        <button onclick="generateShareCard()" class="share-btn tilt-effect" data-tilt>
+            <i class="ri-instagram-line"></i>
+            <span>HİKAYE OLUŞTUR</span>
+        </button>
+        <button onclick="nextSlide()" id="nextBtn" class="nav-arrow"><i class="ri-arrow-right-line"></i></button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
