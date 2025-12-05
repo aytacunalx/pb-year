@@ -13,7 +13,7 @@
     <div id="login-overlay">
         <div class="login-content">
             <h1 class="giant-text" style="font-size: 5vw; margin-bottom: 20px; text-shadow: 0 0 30px rgba(204,255,0,0.5);">#PBRecap</h1>
-            <p class="label" style="opacity: 0.7;">LÜTFEN SAVAŞÇI ADINI GİR</p>
+            <p class="label" style="opacity: 0.7;">PLEASE ENTER YOUR WARRIOR NAME</p>
             
             <div class="input-group">
                 <input type="text" id="nicknameInput" placeholder="NICKNAME" autocomplete="off" maxlength="15">
@@ -21,7 +21,7 @@
             </div>
 
             <button class="start-trigger" onclick="submitLogin()" style="margin-top: 40px; opacity: 1; transform: none;">
-                <span>GİRİŞ YAP</span>
+                <span>LOG IN</span>
                 <i class="ri-login-box-line"></i>
             </button>
         </div>
@@ -43,36 +43,36 @@
             <div class="sc-header">
                 <div class="sc-brand-badge">#PBRecap</div>
                 <h1 class="giant-text">POINT<br><span class="accent-text">BLANK</span></h1>
-                <p class="sc-subtitle">YILLIK OPERASYON ÖZETİ</p>
+                <p class="sc-subtitle">ANNUAL OPERATION SUMMARY</p>
             </div>
 
             <div class="sc-stats-grid">
                 <div class="sc-stat-box">
-                    <span class="label">TOPLAM KILL</span>
+                    <span class="label">TOTAL KILL</span>
                     <span class="value accent-text" id="share-kills">0</span>
                 </div>
                 <div class="sc-stat-box">
-                    <span class="label">HS ORANI</span>
+                    <span class="label">HS RATE</span>
                     <span class="value cyan-text" id="share-hs">0</span>
                 </div>
                 <div class="sc-stat-box">
-                    <span class="label">TOPLAM OYNANAN MAÇ</span>
+                    <span class="label">TOTAL MATCHES PLAYED</span>
                     <span class="value purple-text" id="share-match">0</span>
                 </div>
                 <div class="sc-stat-box">
-                    <span class="label">ZAFERLER</span>
+                    <span class="label">WINS</span>
                     <span class="value purple-text" id="share-win">0</span>
                 </div>
                 <div class="sc-stat-box highlight-box">
-                    <span class="label">YILIN SİLAHI</span>
-                    <span class="value" id="share-weapon" style="font-size: 40px;">SİLAH ADI</span>
+                    <span class="label">WEAPON OF THE YEAR</span>
+                    <span class="value" id="share-weapon" style="font-size: 40px;">WEAPON NAME</span>
                 </div>
             </div>
 
             <div class="sc-footer">
                 <div class="sc-player-name">
-                    <span style="opacity:0.6; font-size: 30px; display:block;">SAVAŞÇI</span> 
-                    <span id="share-username-display" class="accent-text">OYUNCU</span>
+                    <span style="opacity:0.6; font-size: 30px; display:block;">WARRIOR</span> 
+                    <span id="share-username-display" class="accent-text">PLAYER</span>
                 </div>
                 <div class="sc-footer-logos">
                     <span>#POINTBLANK2025</span>
@@ -93,7 +93,7 @@
         <div class="equalizer">
             <span class="bar"></span><span class="bar"></span><span class="bar"></span>
         </div>
-        <span id="soundText">SES KAPALI</span>
+        <span id="soundText">SOUND OFF</span>
     </div>
     <audio id="bgMusic" loop src="bg-music.mp3"></audio>
 
@@ -108,10 +108,10 @@
             <div class="hero-container">
                 <h1 class="giant-text">POINT<br>BLANK</h1>
                 <div class="year-badge" style="margin-top: 20px;">
-                    HOŞ GELDİN, <span id="intro-username-display" style="color: black;">OPERATÖR</span>
+                    WELCOME, <span id="intro-username-display" style="color: black;">OPERATÖR</span>
                 </div>
                 <div class="start-trigger" onclick="nextSlide()">
-                    <span>RAPORU BAŞLAT</span>
+                    <span>START</span>
                     <i class="ri-arrow-right-line"></i>
                 </div>
             </div>
@@ -124,7 +124,7 @@
         <button onclick="prevSlide()" id="prevBtn" class="nav-arrow disabled"><i class="ri-arrow-left-line"></i></button>
         <button onclick="generateShareCard()" class="share-btn tilt-effect" data-tilt>
             <i class="ri-instagram-line"></i>
-            <span>HİKAYE OLUŞTUR</span>
+            <span>CREATE A STORY</span>
         </button>
         <button onclick="nextSlide()" id="nextBtn" class="nav-arrow"><i class="ri-arrow-right-line"></i></button>
     </div>

@@ -36,13 +36,13 @@ const userData = {
         img: "https://pb.tamgame.com/upload/image/weaponInfo/20250417/161806714.png" 
     },
     topMap: {
-        name: "KÜTÜPHANE",
+        name: "LIBRARY",
         matches: "87K+",
         winRate: "93.376"
     },
     duo: {
-        name: "511.697 Saat",
-        synergy: "ÖLÜM MAÇI"
+        name: "511.697 Hour",
+        synergy: "DEATH MATCH"
     }
 };
 
@@ -55,7 +55,7 @@ function submitLogin() {
     
     if(name === "") {
         input.style.borderBottomColor = "red";
-        input.placeholder = "İSİM GİRİNİZ!";
+        input.placeholder = "ENTER YOUR NICK!";
         return;
     }
 
@@ -72,9 +72,9 @@ function submitLogin() {
     const bgMusic = document.getElementById('bgMusic');
     bgMusic.play().then(() => {
         bgMusic.volume = 0.4;
-        document.getElementById('soundText').innerText = "SES AÇIK";
+        document.getElementById('soundText').innerText = "SOUND ON";
         document.querySelectorAll('.equalizer .bar').forEach(b => b.style.animationPlayState = 'running');
-    }).catch(e => console.log("Otomatik müzik engellendi:", e));
+    }).catch(e => console.log("Automatic music blocked:", e));
 
     // Animasyonları başlat
     initPageAnimations();
@@ -95,18 +95,18 @@ const slidesHTML = `
         <div class="bento-container">
             <div class="bento-box box-large" style="background: linear-gradient(to bottom right, rgba(204,255,0,0.1), rgba(20,20,25,0.5));" data-tilt>
                 <div class="deco-crosshair-advanced"><div class="dca-ring"></div><div class="dca-inner"></div></div>
-                <span class="label accent-text"><i class="ri-trophy-line"></i> GENEL PERFORMANS</span>
+                <span class="label accent-text"><i class="ri-trophy-line"></i> OVERALL PERFORMANCE</span>
                 <h2 class="big-stat giant-stat-num accent-text scramble-target" data-value="${formatNumber(rawData.totalKills)}" style="margin-top:auto;">0</h2>
-                 <span class="label" style="margin-top:-10px;">TOPLAM ONAYLI LEŞ</span>
+                 <span class="label" style="margin-top:-10px;">TOTAL APPROVED KILL</span>
             </div>
             <div class="bento-box" data-tilt>
                 <div class="deco-radar"></div>
-                <span class="label">OYNANAN MAÇ</span>
+                <span class="label">MATCH PLAYED</span>
                 <h2 class="big-stat">${userData.generalStats.matches}</h2>
             </div>
             <div class="bento-box" data-tilt>
                 <div class="deco-pulse-graph"></div>
-                <span class="label">K/D ORANI</span>
+                <span class="label">K/D RATE</span>
                 <h2 class="big-stat purple-text">${userData.generalStats.kd}</h2>
             </div>
         </div>
@@ -114,24 +114,24 @@ const slidesHTML = `
 
     <section class="slide" id="slide-mot-1">
         <div style="text-align:center;">
-            <div class="year-badge" style="background:transparent; border: 1px solid white; color:white; transform:none;">ADRENALİN HİÇ DÜŞMEDİ</div>
-            <h1 class="giant-text" style="font-size: 9vw; margin-top:20px;">SAHANIN<br><span class="purple-text" style="text-shadow: 0 0 40px rgba(112,0,255,0.4);">HAKİMİYDİN</span></h1>
-            <p style="font-family:var(--font-head); letter-spacing: 5px; margin-top: 30px; opacity:0.8;">RAKİPLERİNİN KORKULU RÜYASI.</p>
+            <div class="year-badge" style="background:transparent; border: 1px solid white; color:white; transform:none;">ADRENALINE NEVER FALLS</div>
+            <h1 class="giant-text" style="font-size: 9vw; margin-top:20px;">YOU WERE THE DOMINANT<br><span class="purple-text" style="text-shadow: 0 0 40px rgba(112,0,255,0.4);">OF THE FIELD</span></h1>
+            <p style="font-family:var(--font-head); letter-spacing: 5px; margin-top: 30px; opacity:0.8;">HIS COMPETITORS' NIGHTMARE DREAM.</p>
         </div>
     </section>
 
     <section class="slide" id="slide-2">
         <div class="bento-container" style="display:block; text-align:center;">
-             <span class="label cyan-text" style="font-size:1.2rem; letter-spacing:4px;">UZMANLIK ALANI</span>
-            <h1 class="giant-text" style="font-size: 10vw; color:var(--accent-cyan); text-shadow: 0 0 30px rgba(0,240,255,0.3);">KAFA<br>AVCISI</h1>
+             <span class="label cyan-text" style="font-size:1.2rem; letter-spacing:4px;">AREA OF EXPERTISE</span>
+            <h1 class="giant-text" style="font-size: 10vw; color:var(--accent-cyan); text-shadow: 0 0 30px rgba(0,240,255,0.3);">HEAD<br>HUNTER</h1>
             <div class="bento-container" style="height: 30vh; margin-top:40px;">
                  <div class="bento-box" data-tilt style="border-color:var(--accent-cyan);">
                     <div class="deco-crosshair" style="border-color:var(--accent-cyan); opacity:0.5;"></div>
-                    <span class="label">HS SAYISI</span>
+                    <span class="label">HS</span>
                     <h2 class="big-stat cyan-text">${userData.headshotStats.count}</h2>
                 </div>
                 <div class="bento-box" data-tilt style="background:var(--accent-cyan); color:black;">
-                    <span class="label" style="color:rgba(0,0,0,0.6)">İSABET ORANI</span>
+                    <span class="label" style="color:rgba(0,0,0,0.6)">HIT RATE</span>
                     <h2 class="big-stat" style="color:black;">${userData.headshotStats.rate}</h2>
                 </div>
             </div>
@@ -140,14 +140,14 @@ const slidesHTML = `
 
     <section class="slide" id="slide-mot-2">
          <div style="text-align:center;">
-            <h1 class="giant-text" style="font-size: 8vw;">HEDEFİ ASLA<br><span class="cyan-text">ŞAŞIRMADIN</span></h1>
+            <h1 class="giant-text" style="font-size: 8vw;">YOU NEVER MISSED<br><span class="cyan-text">THE TARGET</span></h1>
             <div class="deco-pulse-graph" style="width: 50%; left:25%; position:relative; margin-top:20px;"></div>
         </div>
     </section>
 
     <section class="slide" id="slide-3">
         <div class="bento-container" style="display:block; text-align:center;">
-            <span class="label">FAVORİ SİLAH</span>
+            <span class="label">FAVORITE WEAPON</span>
             <h1 class="giant-text" style="font-size: 8vw;">${userData.topWeapon.name}</h1>
             <div class="bento-box box-wide" style="height: 350px; margin-top:20px; border:none; background: transparent;" data-tilt>
                 <div class="weapon-blueprint-container">
@@ -157,7 +157,7 @@ const slidesHTML = `
                 </div>
                 <div style="position:absolute; bottom:30px; left:30px; text-align:left; z-index:2;">
                     <div class="big-stat accent-text" style="text-shadow: 0 0 10px black;">${userData.topWeapon.kills}</div>
-                    <span class="label" style="text-shadow: 0 0 5px black;">BU SİLAHLA ALINAN LEŞ</span>
+                    <span class="label" style="text-shadow: 0 0 5px black;">KILL TAKEN WITH THIS GUN</span>
                 </div>
             </div>
         </div>
@@ -165,13 +165,13 @@ const slidesHTML = `
 
     <section class="slide" id="slide-pbic-1">
         <div class="bento-container" style="display:block; text-align:center;">
-            <div class="year-badge" style="background:#e10600; color:white; transform:none; box-shadow: 5px 5px 0 white;">GLOBAL SAHNE</div>
-            <h1 class="giant-text" style="font-size: 8vw; margin-top:20px;">DÜNYA<br><span style="color:#e10600; text-shadow: 0 0 50px rgba(225,6,0,0.6);">İSTANBUL'DA</span></h1>
+            <div class="year-badge" style="background:#e10600; color:white; transform:none; box-shadow: 5px 5px 0 white;">GLOBAL STAGE</div>
+            <h1 class="giant-text" style="font-size: 8vw; margin-top:20px;">THE WORLD IS<br><span style="color:#e10600; text-shadow: 0 0 50px rgba(225,6,0,0.6);">IN ISTANBUL</span></h1>
             
             <div class="bento-box box-wide" style="height: 300px; margin-top:20px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.8)), url('https://scontent-sof1-2.xx.fbcdn.net/v/t39.30808-6/487310342_1077892251043185_7415930684124418905_n.jpg?_nc_cat=103&cb2=99be929b-a592a72f&ccb=1-7&_nc_sid=f727a1&_nc_ohc=z6bpWg_rA_oQ7kNvwG-WCnH&_nc_oc=Admz9pXJ2HEfms6AAWebPqZWDDrWm8JumGd1aJamR1_cq27EqDsjqfJLALuqzgypb68&_nc_zt=23&_nc_ht=scontent-sof1-2.xx&_nc_gid=t4wzpMk388n-AIY-RdnHpg&oh=00_AfkHVDsAVKXOuS3ZR8j_Q542HVYs4SmK_XbTSAEL2aYpgA&oe=6937CF30') center/cover;" data-tilt>
                 <div style="position:relative; z-index:2; margin-top:auto;">
                     <h2 class="big-stat" style="font-size:4rem; color:white;">PBIC 2025</h2>
-                    <span class="label" style="color:#e10600; font-weight:900; letter-spacing:3px;">EV SAHİBİ TÜRKİYE</span>
+                    <span class="label" style="color:#e10600; font-weight:900; letter-spacing:3px;">HOST TÜRKİYE</span>
                 </div>
                 <div class="deco-scan" style="background: linear-gradient(to bottom, transparent, #e10600, transparent); opacity:0.2;"></div>
             </div>
@@ -182,14 +182,14 @@ const slidesHTML = `
         <div class="bento-container">
              <div class="bento-box box-large" style="background: linear-gradient(to top, black, transparent), url('https://scontent-sof1-1.xx.fbcdn.net/v/t39.30808-6/487374391_1077888447710232_6915515017505365523_n.jpg?_nc_cat=100&cb2=99be929b-a592a72f&ccb=1-7&_nc_sid=f727a1&_nc_ohc=21mf56G0jFEQ7kNvwFfKMKg&_nc_oc=AdmGLPR0yOCvMnkrIpTbouDnKGbUyn-mlpp_Pwp4NTEwaIDtRPSBqeJTEAzq_5DRdEE&_nc_zt=23&_nc_ht=scontent-sof1-1.xx&_nc_gid=9Oe-UmqtOHT-EwQDX7oCPg&oh=00_AfkOVmt_6SvHZe2ijeoW_2XfffAeMIASIql12H_BfaS6tg&oe=6937C8FA') center/cover;" data-tilt>
                 <div style="z-index:2; margin-top:auto;">
-                    <h2 class="big-stat" style="font-size:3rem;">TARİH<br><span style="color:#e10600;">YAZILDI</span></h2>
-                    <p style="font-family:var(--font-head); letter-spacing:2px; margin-top:10px; opacity:0.8;">BU HEYECANA TANIKLIK ETTİK.</p>
+                    <h2 class="big-stat" style="font-size:3rem;">HISTORY<br><span style="color:#e10600;">WAS MADE</span></h2>
+                    <p style="font-family:var(--font-head); letter-spacing:2px; margin-top:10px; opacity:0.8;">WE WITNESSED THIS EXCITEMENT.</p>
                 </div>
             </div>
             
             <div class="bento-box" style="background: #e10600; color:white;" data-tilt>
-                 <span class="label" style="color:rgba(255,255,255,0.8)">ATMOSFER</span>
-                 <h2 class="big-stat" style="font-size:2.5rem;">EFSANEYDİ</h2>
+                 <span class="label" style="color:rgba(255,255,255,0.8)">ATMOSPHERE</span>
+                 <h2 class="big-stat" style="font-size:2.5rem;">IT WAS A LEGEND</h2>
             </div>
             
             <div class="bento-box" style="background: url('https://scontent-sof1-1.xx.fbcdn.net/v/t39.30808-6/487495912_1077893251043085_8337364965410709938_n.jpg?_nc_cat=108&cb2=99be929b-a592a72f&ccb=1-7&_nc_sid=f727a1&_nc_ohc=y3ar7P66rvUQ7kNvwF_pzPc&_nc_oc=AdkE4E-TbPS4-S88f7Gw3xEHnLk_8NVmTymx0WWQaHMAIpu56Udj6fDRIwmy__MtvH0&_nc_zt=23&_nc_ht=scontent-sof1-1.xx&_nc_gid=vk0aMOzTfbl4olUuqw3iJA&oh=00_Afk5hop1Qq7sr3StiuxAZciAzOOVsEDBKhSOgORpjgUaRg&oe=6937E145') center/cover;" data-tilt>
@@ -200,9 +200,9 @@ const slidesHTML = `
 
     <section class="slide" id="slide-mot-3">
          <div style="text-align:center;">
-             <div class="year-badge" style="background:white; color:black; transform:none;">BİRLİKTE GÜÇLÜYÜZ</div>
-            <h1 class="giant-text" style="font-size: 7vw; margin-top:30px;">SENİNLE<br><span class="accent-text" style="text-shadow: 0 0 50px rgba(204,255,0,0.5);">ÇOK İYİYDİK</span></h1>
-            <p style="font-size: 1.2rem; margin-top: 20px; opacity:0.7;">BU SADECE BİR OYUN DEĞİL, BİR TUTKU.</p>
+             <div class="year-badge" style="background:white; color:black; transform:none;">WE ARE STRONG TOGETHER</div>
+            <h1 class="giant-text" style="font-size: 7vw; margin-top:30px;">WE WERE VERY GOOD<br><span class="accent-text" style="text-shadow: 0 0 50px rgba(204,255,0,0.5);">WITH YOU</span></h1>
+            <p style="font-size: 1.2rem; margin-top: 20px; opacity:0.7;">THIS IS NOT JUST A GAME, IT'S A PASSION.</p>
         </div>
     </section>
 
@@ -210,17 +210,17 @@ const slidesHTML = `
         <div class="bento-container">
              <div class="bento-box box-large" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('https://cdn2.pointblank.id/Web/upload/image/mapInfo/20240208/114034842636.jpg') center/cover;" data-tilt>
                 <div style="z-index:2; margin-top:auto;">
-                    <span class="label accent-text">EV SAHİBİ</span>
+                    <span class="label accent-text">HOMEOWNER</span>
                     <h2 class="big-stat" style="font-size:3.5rem;">${userData.topMap.name}</h2>
-                    <div class="big-stat accent-text" style="font-size:2rem;">${userData.topMap.winRate} Saat Oynandı</div>
+                    <div class="big-stat accent-text" style="font-size:2rem;">${userData.topMap.winRate} Played for Hours</div>
                 </div>
             </div>
             <div class="bento-box" data-tilt>
-                 <span class="label purple-text">TÜM HARİTALARDA OYNAMA SÜRESİ</span>
+                 <span class="label purple-text">PLAYING TIME ON ALL MAPS</span>
                  <h2 class="big-stat" style="font-size:2rem;">${userData.duo.name}</h2>
             </div>
              <div class="bento-box" data-tilt style="background:var(--accent-purple);">
-                 <span class="label" style="color:rgba(255,255,255,0.7)">EN ÇOK OYNANAN MOD</span>
+                 <span class="label" style="color:rgba(255,255,255,0.7)">MOST PLAYED MODE</span>
                  <h2 class="big-stat">${userData.duo.synergy}</h2>
             </div>
         </div>
@@ -233,8 +233,8 @@ const slidesHTML = `
                 <div class="deco-scan"></div>
                 <div style="display:flex; align-items:center; justify-content:space-between; width:100%;">
                     <div>
-                        <span class="label" style="color:#ff3333; font-size:1.2rem;">SAVAŞ MAKİNESİ</span>
-                        <h2 class="big-stat" style="font-size:4rem; margin-top:10px;">SERİ KATİL</h2>
+                        <span class="label" style="color:#ff3333; font-size:1.2rem;">WAR MACHINE</span>
+                        <h2 class="big-stat" style="font-size:4rem; margin-top:10px;">SERIAL KILLER</h2>
                     </div>
                     <div style="text-align:right;">
                         <h2 class="big-stat" style="color:#ff3333;">125K+</h2>
@@ -244,14 +244,14 @@ const slidesHTML = `
             </div>
 
             <div class="bento-box" data-tilt>
-                <span class="label">BOMBACI</span>
+                <span class="label">BOMBER</span>
                 <h2 class="big-stat">783K+</h2>
-                <span class="label" style="margin-top:5px; font-size:0.7rem; opacity:0.6;">EL BOMBASI İLE KILL</span>
+                <span class="label" style="margin-top:5px; font-size:0.7rem; opacity:0.6;">KILL WITH A GRENADE</span>
             </div>
 
             <div class="bento-box" style="background: #ff3333; color:white;" data-tilt>
                 <span class="label" style="color:rgba(255,255,255,0.8);">CHAIN KILLER</span>
-                <h2 class="big-stat">EFSANE</h2>
+                <h2 class="big-stat">LEGENDARY</h2>
                 <i class="ri-fire-fill" style="position:absolute; right:20px; bottom:20px; font-size:3rem; opacity:0.3;"></i>
             </div>
         </div>
@@ -260,31 +260,31 @@ const slidesHTML = `
     <section class="slide" id="slide-coupon">
         <div class="bento-container" style="display:flex; justify-content:center; align-items:center; flex-direction:column; text-align:center;">
             
-            <h1 class="giant-text" style="font-size: 6vw; margin-bottom: 40px;">TEŞEKKÜRLER<br><span class="accent-text">SAVAŞÇI</span></h1>
+            <h1 class="giant-text" style="font-size: 6vw; margin-bottom: 40px;">THANKS<br><span class="accent-text">WARRIOR</span></h1>
             
             <div class="bento-box box-wide" style="width:100%; max-width:600px; height:auto; border: 2px dashed var(--accent-volt); background: rgba(204,255,0,0.05);" data-tilt>
                 <div class="deco-crosshair" style="opacity:0.2;"></div>
-                <span class="label accent-text" style="letter-spacing:5px;">2025 ÖZEL HEDİYE KODU</span>
+                <span class="label accent-text" style="letter-spacing:5px;">2025 SPECIAL GIFT CODE</span>
                 
                 <h2 class="big-stat" style="font-size: 3.5rem; margin: 20px 0; font-family:'Courier New', monospace; letter-spacing:-2px; background:black; padding:10px 20px; border-radius:10px;">
                     PB-2025-GIFT
                 </h2>
                 
-                <p style="font-family:var(--font-head); font-size:1rem; opacity:0.7;">BU KODU KUPON SAYFASINDA KULLANABİLİRSİN.</p>
-                <div class="year-badge" onclick="copyCoupon(this)" style="margin-top:20px; transform:none; cursor:pointer;">KODU KOPYALA</div>
+                <p style="font-family:var(--font-head); font-size:1rem; opacity:0.7;">YOU CAN USE THIS CODE ON THE COUPON PAGE.</p>
+                <div class="year-badge" onclick="copyCoupon(this)" style="margin-top:20px; transform:none; cursor:pointer;">COPY CODE</div>
             </div>
         </div>
     </section>
 
     <section class="slide" id="slide-5">
         <div style="text-align:center; position:relative; z-index:10;">
-            <div class="year-badge" style="transform:none; margin-bottom:20px; background:white;">SONUÇ RAPORU</div>
-            <h1 class="giant-text" style="font-size: 11vw; line-height:0.9;">MUTLAK<br><span class="accent-text">HAKİMİYET</span></h1>
-            <p style="margin-top:30px; font-family:var(--font-head); letter-spacing:3px; font-size:1.2rem;">2026 SENİ BEKLİYOR.</p>
+            <div class="year-badge" style="transform:none; margin-bottom:20px; background:white;">FINAL REPORT</div>
+            <h1 class="giant-text" style="font-size: 11vw; line-height:0.9;">ABSOLUTE<br><span class="accent-text">DOMINATION</span></h1>
+            <p style="margin-top:30px; font-family:var(--font-head); letter-spacing:3px; font-size:1.2rem;">2026 IS WAITING FOR YOU.</p>
             <button class="share-btn tilt-effect" onclick="generateShareCard()" style="margin: 50px auto; transform:scale(1.2);">
-                <i class="ri-instagram-line"></i><span>HİKAYENİ İNDİR</span>
+                <i class="ri-instagram-line"></i><span>DOWNLOAD YOUR STORY</span>
             </button>
-            <p style="margin-top:20px; opacity:0.5; font-size:0.8rem; cursor:pointer;" onclick="location.reload()">TEKRAR İZLE</p>
+            <p style="margin-top:20px; opacity:0.5; font-size:0.8rem; cursor:pointer;" onclick="location.reload()">WATCH AGAIN</p>
         </div>
     </section>
 `;
@@ -419,7 +419,7 @@ window.generateShareCard = function() {
     // 2. Buton Loading Animasyonu
     const btn = document.querySelector('.share-btn');
     const oldText = btn.innerHTML;
-    btn.innerHTML = `<i class="ri-loader-4-line ri-spin"></i> OLUŞTURULUYOR...`;
+    btn.innerHTML = `<i class="ri-loader-4-line ri-spin"></i> Being created...`;
     btn.style.pointerEvents = "none";
 
     // 3. HAYALET KOPYA TEKNİĞİ
@@ -459,11 +459,11 @@ window.generateShareCard = function() {
         btn.style.pointerEvents = "auto";
     }).catch(err => {
         console.error("Hata:", err);
-        alert("Görsel oluşturulamadı. Karakter resmi yüklenemiyor olabilir.");
+        alert("Could not create image. Character image may not be uploaded.");
         
         // Hata durumunda da temizlik yap
         if(document.body.contains(clonedCard)) document.body.removeChild(clonedCard);
-        btn.innerHTML = "HATA!";
+        btn.innerHTML = "ERROR!";
         setTimeout(() => {
             btn.innerHTML = oldText;
             btn.style.pointerEvents = "auto";
@@ -475,11 +475,11 @@ window.generateShareCard = function() {
 window.toggleAudio = function() {
     if (bgMusic.paused) {
         bgMusic.play().then(() => { 
-            bgMusic.volume = 0.4; document.getElementById('soundText').innerText = "SES AÇIK";
+            bgMusic.volume = 0.4; document.getElementById('soundText').innerText = "SOUND ON";
             document.querySelectorAll('.equalizer .bar').forEach(b => b.style.animationPlayState = 'running');
         });
     } else {
-        bgMusic.pause(); document.getElementById('soundText').innerText = "SES KAPALI";
+        bgMusic.pause(); document.getElementById('soundText').innerText = "SOUND OFF";
         document.querySelectorAll('.equalizer .bar').forEach(b => b.style.animationPlayState = 'paused');
     }
 }
@@ -513,7 +513,7 @@ function copyCoupon(element) {
         const originalColor = element.style.color;
 
         // Butonu "Başarılı" moduna al
-        element.innerText = "KOPYALANDI! ✅";
+        element.innerText = "COPIED! ✅";
         element.style.background = "#ccff00"; // Neon Yeşil
         element.style.color = "black";
         element.style.borderColor = "#ccff00";
@@ -527,7 +527,7 @@ function copyCoupon(element) {
         }, 2000);
 
     }).catch(err => {
-        console.error('Kopyalama hatası:', err);
-        element.innerText = "HATA OLUŞTU!";
+        console.error('Copy error:', err);
+        element.innerText = "AN ERROR OCCURRED!";
     });
 }
